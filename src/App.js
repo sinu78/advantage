@@ -34,7 +34,7 @@ function App() {
   }
 
   const handleStep4CLick = () => {
-    window.location.replace("https://calendly.com/taressh/complimentary?month=2021-11")
+    window.location.assign("https://calendly.com/taressh/complimentary?month=2021-11")
   }
 
   return (
