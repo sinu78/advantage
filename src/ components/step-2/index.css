@@ -1,0 +1,265 @@
+body {
+	padding: 0;
+	margin: 0 auto;
+	float: left;
+	width: 100%;
+	height: 100%;
+	font-family: Lato, sans-serif;
+	background: #6bd6e0
+}
+
+main.step_2 {
+	float: left;
+	width: 100%;
+	background-size: cover!important
+}
+
+.step_2 a {
+	text-decoration: none!important
+}
+
+.step_2 .main-screen {
+	float: left;
+	width: 100%;
+	min-height: 1000px
+}
+
+.step_2 .logo {
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0
+}
+
+.step_2 .logo img {
+	float: none;
+    max-height: none;
+}
+
+.step_2 h1 {
+	float: left;
+	width: 100%;
+	text-align: center;
+	font-weight: 400;
+	font-size: 18px;
+	color: #fff;
+	letter-spacing: 4px;
+	text-transform: uppercase
+}
+
+.step_2 p {
+    font-family: Lato, sans-serif !important;
+	font-size: 32px;
+	letter-spacing: 2px;
+	color: #fff !important;
+	line-height: 48px;
+	font-weight: 900 !important
+}
+
+.step_2 p span {
+	font-weight: 400
+}
+
+.watch-the-video-btn {
+	background: #fff;
+	border-color: #fff;
+	color: #3dc1d2;
+	font-size: 32px;
+	font-weight: 900;
+	padding: 20px 50px;
+	border-radius: 100px;
+	margin-top: 80px
+}
+
+.video-slides {
+	float: left;
+	width: 100%;
+	margin-top: -250px;
+	z-index: 9
+}
+
+.divider {
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 0 30%
+}
+
+.divider .divider-dots {
+	float: left;
+	width: 100%;
+	text-align: center
+}
+
+.divider .divider-dots::after {
+	content: ".....................";
+	color: #45d4e0;
+	font-size: 32px
+}
+
+.video-box {
+	background: #fff;
+	height: 320px;
+	border-radius: 12px;
+	min-height: 300px;
+	-webkit-box-shadow: 0 7px 96px 0 rgb(0 0 0 / 20%);
+	box-shadow: 0 7px 96px 0 rgb(0 0 0 / 20%)
+}
+
+.video-box .feature-img {
+	margin-top: -50px;
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: 20px
+}
+
+.video-box .feature-img img {
+	float: left;
+	width: 100%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px
+}
+
+.video-box h2 {
+	color: #333;
+	font-size: 18px;
+	line-height: 28px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	text-transform: initial
+}
+
+.video-box p {
+	color: #333;
+	font-size: 18px;
+	letter-spacing: 0;
+	font-weight: 400;
+	line-height: 28px;
+	padding: 20px 0
+}
+
+.about-author {
+	float: left;
+	width: 100%;
+	padding: 100px 0 50px 0;
+	margin-top: 50px
+}
+
+.profile-pic {
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	border: 5px solid #eaeaea
+}
+
+.profile-pic img {
+	width: 100%
+}
+
+.about-author h1 {
+	font-size: 32px;
+	color: #333;
+	font-weight: 700;
+	padding-top: 20px;
+	margin-bottom: -10px
+}
+
+.about-author p {
+	font-size: 18px;
+	color: #333 !important;
+	font-weight: 400 !important;
+	line-height: 36px;
+	letter-spacing: 2px;
+	padding: 0 10%
+}
+
+footer {
+	float: left;
+	width: 100%;
+	padding: 50px 0;
+	text-align: center;
+	background: #6bd6e0
+}
+
+footer p {
+	font-size: 14px!important;
+	margin: 0;
+	color: #333;
+	font-weight: 400!important;
+	letter-spacing: 0;
+	line-height: 24px
+}
+
+footer p a {
+	color: inherit;
+	text-decoration: none
+}
+
+ul.footer-link {
+	padding: 0;
+	margin: 0;
+	padding: 10px 0;
+	margin-bottom: 20px;
+	display: flex;
+	list-style: none;
+	justify-content: center
+}
+
+ul.footer-link li {
+	float: left;
+	margin: 0 5px;
+	border-right: 1px solid #aeeaef
+}
+
+ul.footer-link li a {
+	padding: 0 10px;
+	text-decoration: none;
+	color: #333
+}
+
+.book-now {
+	float: left;
+	width: 100%;
+	text-align: center
+}
+
+.book-now-btn {
+	background: #38d9e5;
+	border-color: #38d9e5;
+	padding: 20px 50px;
+	border-radius: 100px;
+	font-size: 32px;
+	letter-spacing: 2px;
+	font-weight: 700;
+	margin-top: -123px;
+	color: #fff;
+	text-transform: uppercase
+}
+
+@media only screen and (max-width:720px) {
+	.main-screen {
+		background-image: none!important
+	}
+	.video-slides {
+		margin-top: 0
+	}
+	.video-box {
+		margin-bottom: 100px
+	}
+	.about-author p {
+		padding: 0
+	}
+	ul.footer-link {
+		float: left;
+		width: 100%;
+		display: block
+	}
+	ul.footer-link li {
+		float: left;
+		text-align: left
+	}
+	ul.footer-link li a {
+		float: left;
+		font-size: 14px
+	}
+}

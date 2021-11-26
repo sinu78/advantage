@@ -1,0 +1,488 @@
+body {
+    padding: 0;
+    margin: 0 auto;
+    font-family: Lato, sans-serif
+}
+
+body {
+    float: left;
+    width: 100%;
+    background: #a3e2e9
+}
+
+p {
+    font-family: Roboto, sans-serif!important;
+    font-weight: 400!important;
+    color: #000!important
+}
+
+header {
+    float: left;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    padding: 10px 0;
+    box-sizing: border-box
+}
+
+.logo {
+    float: left;
+    width: 100%
+}
+
+.logo img {
+    float: left;
+    max-width: 100%;
+    max-height: 60px
+}
+
+.info {
+    float: right;
+    text-align: right;
+    width: 100%;
+    color: #333
+}
+
+.info p {
+    float: right;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700
+}
+
+.info p span {
+    float: right;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400
+}
+
+main {
+    float: left;
+    width: 100%;
+    overflow: hidden
+}
+
+.taresh-bhatia {
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden
+}
+
+.about {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 2% 5%;
+    box-sizing: border-box
+}
+
+.about h1 {
+    color: #243b64;
+    font-weight: 900;
+    font-size: 38px;
+    text-transform: uppercase;
+    letter-spacing: 3px
+}
+
+.about h1 span {
+    color: #737373;
+    float: left;
+    width: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 900;
+    line-height: 32px
+}
+
+.diveder {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 0 30%
+}
+
+.diveder .diveder-dots {
+    float: left;
+    width: 100%;
+    text-align: center
+}
+
+.diveder .diveder-dots::after {
+    content: ".....................................................................";
+    color: #fff
+}
+
+.diveder-blue {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 0 30%
+}
+
+.diveder-blue .diveder-dots {
+    float: left;
+    width: 100%;
+    text-align: center
+}
+
+.diveder-blue .diveder-dots::after {
+    content: ".....................................................................";
+    color: #a4e3ea
+}
+
+.about p {
+    color: #333;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 1% 0;
+    box-sizing: border-box;
+    float: left;
+    margin: 0 auto
+}
+
+.reserve-my-seat-form {
+    background: #cbedf0;
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box
+}
+
+.reserve-my-seat-form h2 {
+    background: #243b64;
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    line-height: 35px;
+    box-sizing: border-box;
+    -webkit-animation: fadeinout 2.2s linear infinite;
+    animation: fadeinout 2.2s linear infinite
+}
+
+@-webkit-keyframes fadeinout {
+    0%,
+    100% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1
+    }
+}
+
+@keyframes fadeinout {
+    0%,
+    100% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1
+    }
+}
+
+.reserve-my-seat-form p {
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    line-height: 35px;
+    box-sizing: border-box
+}
+
+.reserve-my-seat-form .form-input {
+    margin-bottom: 30px;
+    padding: 10px 10px;
+    font-weight: 300;
+    color: #333;
+    border-radius: 2px;
+    font-size: 18px
+}
+
+.reserve-my-seat-form .form-btn {
+    float: left;
+    width: 100%;
+    background: #243b64;
+    border-color: #243b64;
+    font-size: 28px;
+    letter-spacing: 2px
+}
+
+.reserve-my-seat-form label {
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    padding: 10px 0;
+    font-weight: 400
+}
+
+.taresh-bhatia img {
+    position: absolute;
+    height: 550px;
+    vertical-align: bottom;
+    display: table-cell;
+    bottom: 0
+}
+
+.about-section {
+    background: #fff;
+    float: left;
+    width: 100%;
+    padding: 2% 0
+}
+
+.intro {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 2% 30px
+}
+
+.intro h2 {
+    color: #334c4e;
+    font-weight: 700;
+    font-size: 36px
+}
+
+.intro p {
+    color: #a1babc;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 300
+}
+
+.about-section-features {
+    float: left;
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box
+}
+
+.intro-box {
+    float: left;
+    width: 100%
+}
+
+.intro-box .img-box {
+    float: left;
+    width: 100%
+}
+
+.intro-box .text-box {
+    float: left;
+    text-align: left;
+    min-height: 250px
+}
+
+.intro-box .text-box h3 {
+    float: left;
+    width: 100%;
+    font-size: 16px
+}
+
+.intro-box .text-box h3 span {
+    float: left;
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 10px
+}
+
+.reserve-my-seat {
+    float: left;
+    width: 100%
+}
+
+.reserve-my-seat p {
+    float: left;
+    width: 100%;
+    padding: 10px 10px;
+    line-height: 26px;
+    text-transform: none;
+    color: #333
+}
+
+.reserve-my-seat .btn {
+    background: #243b64;
+    border-color: #243b64;
+    padding: 10px 100px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    border-radius: 100px
+}
+
+.financial-planning {
+    float: left;
+    width: 100%;
+    background: #fff;
+    padding: 5% 0
+}
+
+.fp-box {
+    float: left;
+    width: 100%;
+    padding: 0 5%
+}
+
+.fp-box h2 {
+    text-transform: uppercase;
+    color: #243b64;
+    line-height: 32px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center
+}
+
+.fp-box p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    color: #333
+}
+
+.fp-box img {
+    float: left;
+    width: 100%
+}
+
+.diveder {
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0
+}
+
+.diveder .diveder-line {
+    float: left;
+    width: 40%;
+    text-align: left;
+    border: 2px solid #a3e2e9
+}
+
+footer {
+    float: left;
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background: #6bd6e0
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0
+}
+
+footer p a {
+    color: inherit;
+    text-decoration: none
+}
+
+ul.footer-link {
+    padding: 0;
+    margin: 0;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    display: flex;
+    list-style: none;
+    justify-content: center
+}
+
+ul.footer-link li {
+    float: left;
+    margin: 0 5px;
+    border-right: 1px solid #aeeaef
+}
+
+ul.footer-link li a {
+    padding: 0 10px;
+    text-decoration: none;
+    color: #333
+}
+
+@media only screen and (max-width:720px) {
+    header {
+        height: 60px
+    }
+    .info p {
+        float: right;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 700
+    }
+    .info p span {
+        float: right;
+        width: 100%;
+        font-size: 11px;
+        font-weight: 400
+    }
+    .taresh-bhatia {
+        padding-bottom: 0
+    }
+    .about {
+        padding: 20px 0;
+        margin: 0 auto
+    }
+    .about h1 {
+        font-size: 24px;
+        letter-spacing: 6px
+    }
+    .about h1 span {
+        font-size: 18px;
+        letter-spacing: 2px;
+        float: left;
+        width: 100%;
+        padding-top: 10px
+    }
+    .taresh-bhatia img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px 0 0 0;
+        box-sizing: border-box
+    }
+    .intro-box .img-box {
+        float: left;
+        width: 100%;
+        text-align: center
+    }
+    .intro-box .text-box {
+        float: left;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box
+    }
+    .reserve-my-seat .btn {
+        padding: 10px 50px
+    }
+    ul.footer-link {
+        float: left;
+        width: 100%;
+        display: block
+    }
+    ul.footer-link li {
+        float: left;
+        text-align: left
+    }
+    ul.footer-link li a {
+        float: left;
+        font-size: 14px
+    }
+}
