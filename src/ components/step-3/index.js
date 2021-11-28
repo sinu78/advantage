@@ -1,21 +1,30 @@
-import {useNavigate} from 'react-router-dom'
+import { useEffect, useState } from 'react';
 import Footer from "../footer"
 import step_3_background_1 from '../../assets/images/step-3-background.webp';
 import './index.css';
 
-const Step_3 = ({handleClick}) => {
+const Step_3 = ({ handleClick }) => {
+    const [showButton, setShowButton] = useState(false)
+    const buttonShowTime = 1000 * 15
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowButton(true)
+        }, buttonShowTime)
+    }, [])
+
     return (
         <>
-            <main className="step_3" style={{background: `url(${step_3_background_1})`}}>
+            <main className="step_3" style={{ background: `url(${step_3_background_1})` }}>
                 <div class="intro-box">
-                    <h1>Watched the video? That's great!</h1>
+                    <h1>Watch The Entire Video</h1>
                     <iframe src="https://player.vimeo.com/video/575514568?autoplay=1" frameborder="0"
                         allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <section class="about">
                     <div class="book-now">
-                        <a onClick={()=>handleClick()} class="book-now-btn btn btn-primary">Watched the entire video? Go
-                            to next step.</a>
+                        {showButton && <a onClick={() => handleClick()} class="book-now-btn btn">If  You Have Watched the Entire Video, Go to the Next Step
+                        </a>}
                     </div>
                     <p>This means you are now equipped with all the basic knowledge that you need to have before you can
                         understand what you stand to gain through my financial advice on what is going to be your commitment.

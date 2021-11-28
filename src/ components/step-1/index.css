@@ -71,6 +71,11 @@ main {
     overflow: hidden
 }
 
+.taresh-bhatia iframe{
+    height: 340px;
+    width: 100%;
+}
+
 .about {
     float: left;
     width: 100%;
@@ -318,11 +323,11 @@ main {
 }
 
 .reserve-my-seat .btn {
-    background: #243b64;
-    border-color: #243b64;
+    background: #4472C4;
+    border-color: #4472C4;
     padding: 10px 100px;
     text-transform: capitalize;
-    font-size: 16px;
+    font-size: 36px;
     font-weight: 700;
     letter-spacing: 4px;
     border-radius: 100px

@@ -10,6 +10,7 @@ const Step_4 = ({handleClick}) => {
                     <div class="head-section">
                         <img src={logo} />
                     </div>
+                    <h1 className="custom-button">Please fill in the following form completely and Submit</h1>
                     <div class="form-tab">
                         <div class="tab-block" id="tab-block">
                             <form>

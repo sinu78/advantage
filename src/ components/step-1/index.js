@@ -10,6 +10,11 @@ import taresh from '../../assets/images/taresh.jpeg';
 import './index.css';
 
 const Home = ({handleSubmit}) => {
+    const handleAlert = (e) => {
+        e.preventDefault()
+        alert("Fill form to watch the video")
+        window.scrollTo(0, 345)
+    }
     return (
         <>
             <Header/>
@@ -19,8 +24,7 @@ const Home = ({handleSubmit}) => {
                         <div class="row">
                             <div class="col-12">
                                 <div class="about">
-                                    <h1>A 4-step roadmap for financial security and richness<span>Attain financial security and
-                                        abundance in foreseeable future.</span></h1>
+                                    <h1>Attain financial security and abundance in foreseeable future<span>A 4-step roadmap for financial security and richness</span></h1>
                                     <div class="diveder">
                                         <div class="diveder-dots"></div>
                                     </div>
@@ -57,7 +61,9 @@ const Home = ({handleSubmit}) => {
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
-                                <img src={taresh_bhatia_homepage} alt=""/>
+                                {/* <img src={taresh_bhatia_homepage} alt=""/> */}
+                                <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -186,14 +192,14 @@ const Home = ({handleSubmit}) => {
                                         arrive at the next stage of our interaction, you will have a clear idea of what I will
                                         deliver and what you will get for the fee you will be paying me. </p>
                                     <p>Hence, it is very important for you to watch this video.</p>
-                                    <p><a href="#" onClick={()=>alert('Fill form to watch the video')}
+                                    <p><a href="#" onClick={(e)=>handleAlert(e)}
                                         class="btn btn-primary">Please Watch the entire Video to go to the Next Step</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="financial-planning">
+                {/* <section class="financial-planning">
                     <div class="comntainer">
                         <div class="fp-box">
                             <div class="row">
@@ -220,7 +226,7 @@ const Home = ({handleSubmit}) => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
             </main>
             <Footer/>
         </>
