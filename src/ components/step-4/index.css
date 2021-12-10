@@ -83,14 +83,15 @@
 	box-sizing: border-box
 }
 
-.step_4 .container-box h1{
-	float: left;
-	padding: 20px;
-	margin-top: 15px;
-	border-radius: 15px;
-	font-size: 28px;
+.step_4 .container-box h1 {
+    float: left;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 15px;
+    font-size: 18px;
     text-align: center;
     width: 100%;
+    line-height: 1.5;
 }
 
 .step_4 .head-section {

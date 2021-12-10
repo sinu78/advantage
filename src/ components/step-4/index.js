@@ -10,7 +10,9 @@ const Step_4 = ({handleClick}) => {
                     <div class="head-section">
                         <img src={logo} />
                     </div>
-                    <h1 className="custom-button">Please fill in the following form completely and Submit</h1>
+                    <h1 className="custom-button">Please fill in all the necessary bits of information that I need to have from you to be able to assess the further course of action. Please don't hold back. Please don't worry, everything is confidential. 
+I am legally bound to protect your privacy.
+</h1>
                     <div class="form-tab">
                         <div class="tab-block" id="tab-block">
                             <form>

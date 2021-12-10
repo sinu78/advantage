@@ -18,8 +18,7 @@ function App() {
   const [isStepFour, setStepFour] = useState(false)
   const [isStepFive, setStepFive] = useState(false)
 
-  const handlehHomeSubmit = (e) => {
-    e.preventDefault()
+  const getFormValidation = () => {
     setHome(false)
     setStepThree(true)
     window.scrollTo(0, 0)
@@ -45,7 +44,7 @@ function App() {
 
   return (
     <>
-    {isHomePage && <Home handleSubmit={handlehHomeSubmit}/>}
+    {isHomePage && <Home getFormValidation={getFormValidation}/>}
     {/* {isStepTwo && <StepTwo handleClick={handleStep2CLick}/>} */}
     {isStepThree && <StepThree handleClick={handleStep3CLick}/>}
     {isStepFour && <StepFour handleClick={handleStep4CLick}/>}

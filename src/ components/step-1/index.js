@@ -1,4 +1,4 @@
-import {useNavigate} from 'react-router-dom';
+import { useReducer, useState } from 'react';
 import Header from '../header';
 import Footer from '../footer';
 import taresh_bhatia_homepage from '../../assets/images/taresh-bhatia-homepage.png';
@@ -9,12 +9,63 @@ import benefir_4 from '../../assets/images/benefir-4.png';
 import taresh from '../../assets/images/taresh.jpeg';
 import './index.css';
 
-const Home = ({handleSubmit}) => {
+const Home = ({getFormValidation}) => {
+    const [state, setState] = useReducer(
+        (state, newState) => ({ ...state, ...newState }),
+        {
+            name: '',
+            email: '',
+            mobileNo: ''
+        }
+    );
+    const [formSubmitted, setFormSubmit] = useState(false);
+    const [errors, setErrors] = useState([]);
+
     const handleAlert = (e) => {
         e.preventDefault()
         alert("Fill form to watch the video")
         window.scrollTo(0, 345)
     }
+
+    const handleChange = (e) => {
+        const {name, value} = e.target
+        setState({[name]: value})
+    }
+
+    const handleSubmit = () => {
+        setFormSubmit(true)
+        const isValidated = validateForm()
+        if(isValidated){
+            getFormValidation(true)
+        }
+    }
+
+    const validateForm = () => {
+        const errors = []
+        if (!state.name) {
+            errors.push('Name is Required.')
+        }
+        if (!state.email) {
+            errors.push('Email is Required.')
+        }
+        else if (!state.email.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )) {
+            errors.push('Invalid Email. Please enter email as name@email.com')
+        }
+        if (!state.mobileNo) {
+            errors.push('Mobile No is Required.')
+        }
+        else if(!/^\d*$/.test(state.mobileNo)){
+            errors.push('Mobile No is not valid.')
+        }
+        if (errors.length) {
+            setErrors(errors)
+            return false
+        }
+        return true
+    }
+
     return (
         <>
             <Header/>
@@ -30,31 +81,46 @@ const Home = ({handleSubmit}) => {
                                     </div>
                                     <p>Expert advice on growing your money strategically and in a way that sustains long-term
                                         growth.</p>
+                                    <h2>Rarely shared insights into financial planning <br/>Why people have financial problems? What sets them free?</h2>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="reserve-my-seat-form">
-                                    <h2>Rarely shared insights into financial planning</h2>
-                                    <p>Why people have financial problems? What sets them free?</p>
-                                    <form onSubmit={(e)=>handleSubmit(e)}>
+                                <h1>To get started, on the 4-STEP ROADMAP FOR FINANCIAL SECURITY AND RICHNESS</h1> 
+                                <h2>Please provide your name, email and contact details here.
+                                We won't send you spam. Unsubscribe at any time.</h2>
+                                <h3>Subscribe and get Free Newsletter</h3> 
+                                    {errors && errors.map(item=>{
+                                        return(
+                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                                </svg>
+                                                <div style={{marginLeft: '10px'}}>
+                                                    {item}
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                    <form>
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-input" name="name" placeholder="Name*"
-                                                required/>
+                                            <input value={state.name} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.name && formSubmitted) ? 'error' : ''}`} name="name" placeholder="Name*"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-input" name="email" placeholder="Email*"
-                                                required/>
+                                            <input value={state.email} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.email && formSubmitted) ? 'error' : ''}`} name="email" placeholder="Email*"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-input" name="mobile"
-                                                placeholder="Mobile*" required/>
+                                            <input value={state.mobileNo} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.mobileNo && formSubmitted) ? 'error' : ''}`} name="mobileNo" placeholder="Mobile*"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="submit" class="btn btn-primary form-btn" value="Submit"/>
+                                            <input type="button" onClick={()=>handleSubmit()} class="btn btn-primary form-btn" value="Submit"/>
                                         </div>
                                         <div class="form-group">
+                                            <label>By providing us with your information you are consenting to the collection and use of your information in accordance with our Terms of Service and Privacy Policy
+                                            </label>
                                             <label>*Don’t proceed before watching this video!</label>
                                         </div>
                                     </form>
