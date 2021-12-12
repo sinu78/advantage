@@ -4,8 +4,17 @@
 
 }
 
+.step_4 input {
+    width: 92%;
+    margin: 13px 0;
+    height: 30px;
+    text-indent: 10px;
+	font-size: 14px;
+    padding: 16px 0;
+}
+
 .step_4 textarea {
-	min-width: 93%;
+	min-width: 92%;
 	resize: none!important;
 	min-height: 100px;
 	font-family: "Open Sans", sans-serif!important;
@@ -14,7 +23,7 @@
 }
 
 .step_4 select {
-	width: 93%;
+	width: 92%;
 	padding: 10px;
 	box-sizing: border-box
 }

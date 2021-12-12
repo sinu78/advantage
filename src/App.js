@@ -1,11 +1,5 @@
 import { useState } from "react";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
 import Home  from "./ components/step-1/index";
-import StepTwo  from "./ components/step-2/index";
 import StepThree  from "./ components/step-3/index";
 import StepFour  from "./ components/step-4/index";
 import StepFive  from "./ components/step-5/index";
@@ -13,7 +7,6 @@ import StepFive  from "./ components/step-5/index";
 
 function App() {
   const [isHomePage, setHome] = useState(true)
-  // const [isStepTwo, setStepTwo] = useState(true)
   const [isStepThree, setStepThree] = useState(false)
   const [isStepFour, setStepFour] = useState(false)
   const [isStepFive, setStepFive] = useState(false)
@@ -23,12 +16,6 @@ function App() {
     setStepThree(true)
     window.scrollTo(0, 0)
   }
-
-  // const handleStep2CLick = () =>{
-  //    setStepTwo(false)
-  //   setStepThree(true)
-  //   window.scrollTo(0, 0)
-  // }
 
   const handleStep3CLick = () => {
     setStepThree(false)
@@ -45,7 +32,6 @@ function App() {
   return (
     <>
     {isHomePage && <Home getFormValidation={getFormValidation}/>}
-    {/* {isStepTwo && <StepTwo handleClick={handleStep2CLick}/>} */}
     {isStepThree && <StepThree handleClick={handleStep3CLick}/>}
     {isStepFour && <StepFour handleClick={handleStep4CLick}/>}
     {isStepFive && <StepFive/>}

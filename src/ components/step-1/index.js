@@ -20,11 +20,13 @@ const Home = ({getFormValidation}) => {
     );
     const [formSubmitted, setFormSubmit] = useState(false);
     const [errors, setErrors] = useState([]);
+    const email_regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/gi;
+    const mobile_regex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/gi;
 
     const handleAlert = (e) => {
         e.preventDefault()
-        alert("Fill form to watch the video")
-        window.scrollTo(0, 345)
+        window.scrollTo(0, 447)
+        handleSubmit()
     }
 
     const handleChange = (e) => {
@@ -48,15 +50,13 @@ const Home = ({getFormValidation}) => {
         if (!state.email) {
             errors.push('Email is Required.')
         }
-        else if (!state.email.match(
-            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )) {
+        else if (!state.email.match(email_regex)) {
             errors.push('Invalid Email. Please enter email as name@email.com')
         }
         if (!state.mobileNo) {
             errors.push('Mobile No is Required.')
         }
-        else if(!/^\d*$/.test(state.mobileNo)){
+        else if(!mobile_regex.test(state.mobileNo)){
             errors.push('Mobile No is not valid.')
         }
         if (errors.length) {
@@ -86,6 +86,11 @@ const Home = ({getFormValidation}) => {
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-6 col-12">
+                                {/* <img src={taresh_bhatia_homepage} alt=""/> */}
+                                <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                             <div class="col-md-6 col-12">
                                 <div class="reserve-my-seat-form">
                                 <h1>To get started, on the 4-STEP ROADMAP FOR FINANCIAL SECURITY AND RICHNESS</h1> 
@@ -125,11 +130,6 @@ const Home = ({getFormValidation}) => {
                                         </div>
                                     </form>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                {/* <img src={taresh_bhatia_homepage} alt=""/> */}
-                                <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
-                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
