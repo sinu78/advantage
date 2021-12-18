@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios';
 import Home  from "./ components/step-1/index";
 import StepThree  from "./ components/step-3/index";
 import StepFour  from "./ components/step-4/index";
@@ -11,10 +12,19 @@ function App() {
   const [isStepFour, setStepFour] = useState(false)
   const [isStepFive, setStepFive] = useState(false)
 
-  const getFormValidation = () => {
-    setHome(false)
-    setStepThree(true)
-    window.scrollTo(0, 0)
+  const handleSubmit = async (data) => {
+    try {
+      const formData = { ...data }
+      const url = "https://advantagefp.in/api/homepage.php"
+      const response = await axios.post(url, formData)
+      // setHome(false)
+    // setStepThree(true)
+    // window.scrollTo(0, 0)
+      debugger
+    }
+    catch (e) {
+      console.error(e)
+    }
   }
 
   const handleStep3CLick = () => {
@@ -31,7 +41,7 @@ function App() {
 
   return (
     <>
-    {isHomePage && <Home getFormValidation={getFormValidation}/>}
+    {isHomePage && <Home submitForm={handleSubmit}/>}
     {isStepThree && <StepThree handleClick={handleStep3CLick}/>}
     {isStepFour && <StepFour handleClick={handleStep4CLick}/>}
     {isStepFive && <StepFive/>}

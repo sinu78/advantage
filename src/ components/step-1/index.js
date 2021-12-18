@@ -9,13 +9,13 @@ import benefir_4 from '../../assets/images/benefir-4.png';
 import taresh from '../../assets/images/taresh.jpeg';
 import './index.css';
 
-const Home = ({getFormValidation}) => {
+const Home = ({submitForm}) => {
     const [state, setState] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
         {
             name: '',
             email: '',
-            mobileNo: ''
+            mobile: ''
         }
     );
     const [formSubmitted, setFormSubmit] = useState(false);
@@ -38,7 +38,7 @@ const Home = ({getFormValidation}) => {
         setFormSubmit(true)
         const isValidated = validateForm()
         if(isValidated){
-            getFormValidation(true)
+            submitForm(state)
         }
     }
 
@@ -53,10 +53,10 @@ const Home = ({getFormValidation}) => {
         else if (!state.email.match(email_regex)) {
             errors.push('Invalid Email. Please enter email as name@email.com')
         }
-        if (!state.mobileNo) {
+        if (!state.mobile) {
             errors.push('Mobile No is Required.')
         }
-        else if(!mobile_regex.test(state.mobileNo)){
+        else if(!mobile_regex.test(state.mobile)){
             errors.push('Mobile No is not valid.')
         }
         if (errors.length) {
@@ -70,14 +70,14 @@ const Home = ({getFormValidation}) => {
         <>
             <Header/>
             <main>
-                <section class="taresh-bhatia">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="about">
+                <section className="taresh-bhatia">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="about">
                                     <h1>Attain financial security and abundance in foreseeable future<span>A 4-step roadmap for financial security and richness</span></h1>
-                                    <div class="diveder">
-                                        <div class="diveder-dots"></div>
+                                    <div className="diveder">
+                                        <div className="diveder-dots"></div>
                                     </div>
                                     <p>Expert advice on growing your money strategically and in a way that sustains long-term
                                         growth.</p>
@@ -85,22 +85,22 @@ const Home = ({getFormValidation}) => {
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 col-12">
+                        <div className="row">
+                            <div className="col-md-6 col-12">
                                 {/* <img src={taresh_bhatia_homepage} alt=""/> */}
-                                <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
-                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                {/* <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> */}
                             </div>
-                            <div class="col-md-6 col-12">
-                                <div class="reserve-my-seat-form">
+                            <div className="col-md-6 col-12">
+                                <div className="reserve-my-seat-form">
                                 <h1>To get started, on the 4-STEP ROADMAP FOR FINANCIAL SECURITY AND RICHNESS</h1> 
                                 <h2>Please provide your name, email and contact details here.
                                 We won't send you spam. Unsubscribe at any time.</h2>
                                 <h3>Subscribe and get Free Newsletter</h3> 
                                     {errors && errors.map(item=>{
                                         return(
-                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                            <div className="alert alert-danger d-flex align-items-center" role="alert">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                                     <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
                                                 </svg>
@@ -111,19 +111,19 @@ const Home = ({getFormValidation}) => {
                                         )
                                     })}
                                     <form>
-                                        <div class="form-group">
+                                        <div className="form-group">
                                             <input value={state.name} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.name && formSubmitted) ? 'error' : ''}`} name="name" placeholder="Name*"/>
                                         </div>
-                                        <div class="form-group">
+                                        <div className="form-group">
                                             <input value={state.email} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.email && formSubmitted) ? 'error' : ''}`} name="email" placeholder="Email*"/>
                                         </div>
-                                        <div class="form-group">
-                                            <input value={state.mobileNo} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.mobileNo && formSubmitted) ? 'error' : ''}`} name="mobileNo" placeholder="Mobile*"/>
+                                        <div className="form-group">
+                                            <input value={state.mobile} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.mobile && formSubmitted) ? 'error' : ''}`} name="mobile" placeholder="Mobile*"/>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="button" onClick={()=>handleSubmit()} class="btn btn-primary form-btn" value="Submit"/>
+                                        <div className="form-group">
+                                            <input type="button" onClick={()=>handleSubmit()} className="btn btn-primary form-btn" value="Submit"/>
                                         </div>
-                                        <div class="form-group">
+                                        <div className="form-group">
                                             <label>By providing us with your information you are consenting to the collection and use of your information in accordance with our Terms of Service and Privacy Policy
                                             </label>
                                             <label>*Don’t proceed before watching this video!</label>
@@ -134,31 +134,31 @@ const Home = ({getFormValidation}) => {
                         </div>
                     </div>
                 </section>
-                <section class="about-section">
-                    <div class="conatiner">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="intro">
+                <section className="about-section">
+                    <div className="conatiner">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="intro">
                                     <h2>Hi! I am Taresh. I am a CERTIFIED FINANCIAL PLANNER Pro.</h2>
-                                    <div class="diveder-blue">
-                                        <div class="diveder-dots"></div>
+                                    <div className="diveder-blue">
+                                        <div className="diveder-dots"></div>
                                     </div>
                                     <p>I excel in helping people like you become financially secure and rich. I’m licensed for
                                         that. In a nutshell, this is how I can help you.</p>
                                 </div>
                             </div>
-                            <div class="about-section-features">
-                                <div class="row">
-                                    <div class="col-md-6 col-12">
-                                        <div class="intro-box">
-                                            <div class="row">
-                                                <div class="col-md-3 col-12">
-                                                    <div class="img-box">
+                            <div className="about-section-features">
+                                <div className="row">
+                                    <div className="col-md-6 col-12">
+                                        <div className="intro-box">
+                                            <div className="row">
+                                                <div className="col-md-3 col-12">
+                                                    <div className="img-box">
                                                         <img src={benefir_1} alt=""/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-12">
-                                                    <div class="text-box">
+                                                <div className="col-md-7 col-12">
+                                                    <div className="text-box">
                                                         <h3><span>Benefit #1</span>Realistic assessment</h3>
                                                         <p>We shall discuss and make a realistic assessment of your current
                                                             financial situation including investments, tax returns, lifestyle,
@@ -167,15 +167,15 @@ const Home = ({getFormValidation}) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="intro-box">
-                                            <div class="row">
-                                                <div class="col-md-3 col-12">
-                                                    <div class="img-box">
+                                        <div className="intro-box">
+                                            <div className="row">
+                                                <div className="col-md-3 col-12">
+                                                    <div className="img-box">
                                                         <img src={benefir_2} alt=""/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-12">
-                                                    <div class="text-box">
+                                                <div className="col-md-7 col-12">
+                                                    <div className="text-box">
                                                         <h3><span>Benefit #2</span>Future goals assessment</h3>
                                                         <p>Kids’ education, money for the spouse in your absence, pension fund,
                                                             health insurance, inflation, depreciation and interest rates,
@@ -185,16 +185,16 @@ const Home = ({getFormValidation}) => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="intro-box">
-                                            <div class="row">
-                                                <div class="col-md-3 col-12">
-                                                    <div class="img-box">
+                                    <div className="col-md-6 col-12">
+                                        <div className="intro-box">
+                                            <div className="row">
+                                                <div className="col-md-3 col-12">
+                                                    <div className="img-box">
                                                         <img src={benefir_3} alt=""/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-12">
-                                                    <div class="text-box">
+                                                <div className="col-md-7 col-12">
+                                                    <div className="text-box">
                                                         <h3><span>Benefit #3</span>Current and future opportunities</h3>
                                                         <p>This is where your money grows. Recognize the opportunities. Make
                                                             profitable investments and avoid bad investments. Asset allocation.
@@ -204,15 +204,15 @@ const Home = ({getFormValidation}) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="intro-box">
-                                            <div class="row">
-                                                <div class="col-md-3 col-12">
-                                                    <div class="img-box">
+                                        <div className="intro-box">
+                                            <div className="row">
+                                                <div className="col-md-3 col-12">
+                                                    <div className="img-box">
                                                         <img src={benefir_4} alt=""/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-12">
-                                                    <div class="text-box">
+                                                <div className="col-md-7 col-12">
+                                                    <div className="text-box">
                                                         <h3><span>Benefit #4</span>Ongoing handholding</h3>
                                                         <p>Life is full of unpredictable events. Things never work according to
                                                             plan. This is where, you need someone who can guide you through the
@@ -230,14 +230,14 @@ const Home = ({getFormValidation}) => {
                         </div>
                     </div>
                 </section>
-                <section class="reserve-my-seat">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="about">
+                <section className="reserve-my-seat">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="about">
                                     <h1>Don't proceed before watching the video.</h1>
-                                    <div class="diveder">
-                                        <div class="diveder-dots"></div>
+                                    <div className="diveder">
+                                        <div className="diveder-dots"></div>
                                     </div>
                                     <p>I have specially made the video for you so that you have a very clear idea of what I'm
                                         going to deliver and what is going to be YOUR commitment in terms of fee,
@@ -259,21 +259,21 @@ const Home = ({getFormValidation}) => {
                                         deliver and what you will get for the fee you will be paying me. </p>
                                     <p>Hence, it is very important for you to watch this video.</p>
                                     <p><a href="#" onClick={(e)=>handleAlert(e)}
-                                        class="btn btn-primary">Please Watch the entire Video to go to the Next Step</a></p>
+                                        className="btn btn-primary">Please Watch the entire Video to go to the Next Step</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                {/* <section class="financial-planning">
-                    <div class="comntainer">
-                        <div class="fp-box">
-                            <div class="row">
-                                <div class="col-md-6 col-12">
+                {/* <section className="financial-planning">
+                    <div className="comntainer">
+                        <div className="fp-box">
+                            <div className="row">
+                                <div className="col-md-6 col-12">
                                     <h2>Financial planning is important for your future <br />...as well as the future of your
                                         loved ones.</h2>
-                                    <div class="diveder">
-                                        <div class="diveder-line"></div>
+                                    <div className="diveder">
+                                        <div className="diveder-line"></div>
                                     </div>
                                     <p>You shouldn't take financial planning lightly. Expenses can be unpredictable. There could
                                         be 100% or even more inflation by the time you reach your 60s or 70s. There could be
@@ -286,7 +286,7 @@ const Home = ({getFormValidation}) => {
                                         comfortable and financially independent. One simple decision like deciding to work with
                                         a financial advisor, can change your future, for better.</p>
                                 </div>
-                                <div class="col-md-6 col-12">
+                                <div className="col-md-6 col-12">
                                     <img src={taresh} alt=""/>
                                 </div>
                             </div>
