@@ -1,12 +1,10 @@
 import { useReducer, useState } from 'react';
 import Header from '../header';
 import Footer from '../footer';
-import taresh_bhatia_homepage from '../../assets/images/taresh-bhatia-homepage.png';
 import benefir_1 from '../../assets/images/benefir-1.png';
 import benefir_2 from '../../assets/images/benefir-2.png';
 import benefir_3 from '../../assets/images/benefir-3.png';
 import benefir_4 from '../../assets/images/benefir-4.png';
-import taresh from '../../assets/images/taresh.jpeg';
 import './index.css';
 
 const Home = ({submitForm}) => {
@@ -74,7 +72,7 @@ const Home = ({submitForm}) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
-                                <div className="about">
+                                <div className="about mobile-hidden">
                                     <h1>Attain financial security and abundance in foreseeable future<span>A 4-step roadmap for financial security and richness</span></h1>
                                     <div className="diveder">
                                         <div className="diveder-dots"></div>
@@ -87,9 +85,8 @@ const Home = ({submitForm}) => {
                         </div>
                         <div className="row">
                             <div className="col-md-6 col-12">
-                                {/* <img src={taresh_bhatia_homepage} alt=""/> */}
-                                {/* <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
-                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> */}
+                                <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div className="col-md-6 col-12">
                                 <div className="reserve-my-seat-form">
@@ -97,9 +94,9 @@ const Home = ({submitForm}) => {
                                 <h2>Please provide your name, email and contact details here.
                                 We won't send you spam. Unsubscribe at any time.</h2>
                                 <h3>Subscribe and get Free Newsletter</h3> 
-                                    {errors && errors.map(item=>{
+                                    {errors && errors.map((item, index)=>{
                                         return(
-                                            <div className="alert alert-danger d-flex align-items-center" role="alert">
+                                            <div key={index} className="alert alert-danger d-flex align-items-center" role="alert">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-exclamation-circle" viewBox="0 0 16 16">
                                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                                     <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
@@ -129,6 +126,19 @@ const Home = ({submitForm}) => {
                                             <label>*Don’t proceed before watching this video!</label>
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="about mobile-visible">
+                                    <h1>Attain financial security and abundance in foreseeable future<span>A 4-step roadmap for financial security and richness</span></h1>
+                                    <div className="diveder">
+                                        <div className="diveder-dots"></div>
+                                    </div>
+                                    <p>Expert advice on growing your money strategically and in a way that sustains long-term
+                                        growth.</p>
+                                    <h2>Rarely shared insights into financial planning <br/>Why people have financial problems? What sets them free?</h2>
                                 </div>
                             </div>
                         </div>
@@ -265,34 +275,6 @@ const Home = ({submitForm}) => {
                         </div>
                     </div>
                 </section>
-                {/* <section className="financial-planning">
-                    <div className="comntainer">
-                        <div className="fp-box">
-                            <div className="row">
-                                <div className="col-md-6 col-12">
-                                    <h2>Financial planning is important for your future <br />...as well as the future of your
-                                        loved ones.</h2>
-                                    <div className="diveder">
-                                        <div className="diveder-line"></div>
-                                    </div>
-                                    <p>You shouldn't take financial planning lightly. Expenses can be unpredictable. There could
-                                        be 100% or even more inflation by the time you reach your 60s or 70s. There could be
-                                        medical expenses you can't even imagine right now. One of your kids may decide to pursue
-                                        a career that requires you to arrange lots of cash suddenly. In case something happens
-                                        to you, you don't want to leave your spouse financially dependent on your kids.
-                                        Uncomfortable, but realistic scenarios. Wouldn't you want to be prepared for them?</p>
-                                    <p>Good news is, such financial security is not unattainable. With strategic planning and a
-                                        concerted effort over a period of 5-10 years can make your post-retirement years joyful,
-                                        comfortable and financially independent. One simple decision like deciding to work with
-                                        a financial advisor, can change your future, for better.</p>
-                                </div>
-                                <div className="col-md-6 col-12">
-                                    <img src={taresh} alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
             </main>
             <Footer/>
         </>

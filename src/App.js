@@ -11,16 +11,21 @@ function App() {
   const [isStepThree, setStepThree] = useState(false)
   const [isStepFour, setStepFour] = useState(false)
   const [isStepFive, setStepFive] = useState(false)
-
-  const handleSubmit = async (data) => {
+  const headers = { "Content-Type": "multipart/form-data" }
+  const handleHomePageSubmit = async (data) => {
     try {
-      const formData = { ...data }
+      const {name, email, mobile} = data
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('mobile', mobile);
       const url = "https://advantagefp.in/api/homepage.php"
-      const response = await axios.post(url, formData)
-      // setHome(false)
-    // setStepThree(true)
-    // window.scrollTo(0, 0)
-      debugger
+      const response = await axios.post(url, formData, headers)
+      if(response?.data?.status === 200){
+        setHome(false)
+        setStepThree(true)
+        window.scrollTo(0, 0)
+      }
     }
     catch (e) {
       console.error(e)
@@ -33,17 +38,30 @@ function App() {
     window.scrollTo(0, 0)
   }
 
-  const handleStep4CLick = () => {
-    setStepFour(false)
-    setStepFive(true)
-    window.scrollTo(0, 0)
+  const handleStep4Submit = async (data) => {
+    try {
+      const formData = new FormData();
+      for (let item in data) {
+        formData.append([item], data[item])
+      }
+      const url = "https://advantagefp.in/api/form.php"
+      const response = await axios.post(url, formData, headers)
+      if (response?.data?.status === 200) {
+        setStepFour(false)
+        setStepFive(true)
+        window.scrollTo(0, 0)
+      }
+    }
+    catch (e) {
+      console.error(e)
+    }
   }
 
   return (
     <>
-    {isHomePage && <Home submitForm={handleSubmit}/>}
+    {isHomePage && <Home submitForm={handleHomePageSubmit}/>}
     {isStepThree && <StepThree handleClick={handleStep3CLick}/>}
-    {isStepFour && <StepFour handleClick={handleStep4CLick}/>}
+    {isStepFour && <StepFour submitForm={handleStep4Submit}/>}
     {isStepFive && <StepFive/>}
     </>
   );
