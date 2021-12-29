@@ -36,6 +36,7 @@ const Home = ({submitForm}) => {
         setFormSubmit(true)
         const isValidated = validateForm()
         if(isValidated){
+            setFormSubmit(false)
             submitForm(state)
         }
     }
@@ -57,8 +58,8 @@ const Home = ({submitForm}) => {
         else if(!mobile_regex.test(state.mobile)){
             errors.push('Mobile No is not valid.')
         }
+        setErrors(errors)
         if (errors.length) {
-            setErrors(errors)
             return false
         }
         return true

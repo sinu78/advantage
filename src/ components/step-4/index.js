@@ -55,9 +55,8 @@ const Step_4 = ({submitForm}) => {
                 errors.push('Mobile No is not valid.')
             }
         }
-
+        setErrors(errors)
         if (errors.length) {
-            setErrors(errors)
             return false
         }
         return true
