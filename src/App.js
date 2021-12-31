@@ -1,10 +1,11 @@
 import { useState } from "react";
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 import Home  from "./ components/step-1/index";
 import StepThree  from "./ components/step-3/index";
 import StepFour  from "./ components/step-4/index";
 import StepFive  from "./ components/step-5/index";
-
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   const [isHomePage, setHome] = useState(true)
@@ -27,8 +28,9 @@ function App() {
         window.scrollTo(0, 0)
       }
     }
-    catch (e) {
-      console.error(e)
+    catch (error) {
+      error?.message && showError(error.message)
+      console.error(error)
     }
   }
 
@@ -52,17 +54,42 @@ function App() {
         window.scrollTo(0, 0)
       }
     }
-    catch (e) {
-      console.error(e)
+    catch (error) {
+      error?.message && showError(error.message)
+      console.error(error)
     }
+  }
+
+  const showError = (message) => {
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      });
   }
 
   return (
     <>
-    {isHomePage && <Home submitForm={handleHomePageSubmit}/>}
-    {isStepThree && <StepThree handleClick={handleStep3CLick}/>}
-    {isStepFour && <StepFour submitForm={handleStep4Submit}/>}
-    {isStepFive && <StepFive/>}
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover
+      />
+      {isHomePage && <Home submitForm={handleHomePageSubmit}/>}
+      {isStepThree && <StepThree handleClick={handleStep3CLick}/>}
+      {isStepFour && <StepFour submitForm={handleStep4Submit}/>}
+      {isStepFive && <StepFive/>}
+      
     </>
   );
 }

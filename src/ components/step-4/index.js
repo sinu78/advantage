@@ -1,4 +1,6 @@
 import { useReducer, useState } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import logo from '../../assets/images/advatage-logo.png';
 import './index.css';
 
@@ -9,6 +11,7 @@ const Step_4 = ({submitForm}) => {
     );
     const [formSubmitted, setFormSubmit] = useState(false);
     const [errors, setErrors] = useState([]);
+    const [dateOfBirth, setDateOfbirth] = useState("");
     const REQUIRED_FIELDS = [
         { key: 'fullName', label: 'Full Name' },
         { key: 'dateOfBirth', label: 'Date Of Birth' },
@@ -30,10 +33,16 @@ const Step_4 = ({submitForm}) => {
         setState({ [name]: value })
     }
 
+    const handleDateChange = (date) => {
+        setState({dateOfBirth: date.toLocaleDateString()})
+        setDateOfbirth(date)
+    }
+
     const handleSubmit = () => {
         setFormSubmit(true)
         const isValidated = validateForm()
         if(isValidated){
+            setFormSubmit(false)
             submitForm(state)
         }
         else {
@@ -103,8 +112,16 @@ const Step_4 = ({submitForm}) => {
                                                 <label>What is your Date of Birth?<sup>*</sup></label>
                                             </div>
                                             <div className="col-6">
-                                                <input value={state.dateOfBirth} onChange={(e)=>handleChange(e)} className={`${(!state.dateOfBirth && formSubmitted) ? 'error' : ''}`} type="text" className="datepicker" id="dateOfBirth" name="dateOfBirth"
-                                                    placeholder="Date of birth" required />
+                                                <DatePicker
+                                                    selected={dateOfBirth}
+                                                    onChange={(date) => handleDateChange(date)}
+                                                    peekNextMonth
+                                                    showMonthDropdown
+                                                    showYearDropdown
+                                                    dropdownMode="select"
+                                                    dateFormat="dd/MM/yyyy"
+                                                    placeholderText="Date of birth"
+                                                />
                                             </div>
                                         </div>
                                         <div className="form-div">
