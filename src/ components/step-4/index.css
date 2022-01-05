@@ -4,7 +4,7 @@
 
 }
 
-.step_4 input {
+.step_4 input[type='text'] {
     width: 92%;
     margin: 13px 0;
     height: 30px;
@@ -205,7 +205,7 @@
 	top: 2px
 }
 
-.step_4 a.btn-next {
+.step_4 input.btn-next {
 	background: #4472C4;
 	color: #fff;
 	font-size: 15px;
@@ -217,6 +217,7 @@
 	margin: 20px 0;
 	margin-right: 72px;
 	cursor: pointer;
+	border: none
 }
 
 .step_4 .page-count {
@@ -254,7 +255,7 @@ sup {
 	margin-left: 3px
 }
 
-.step_4 .step_4 input {
+.step_4 .step_4 input[type='text'] {
 	width: 90%;
 	margin: 13px 0;
 	height: 30px;

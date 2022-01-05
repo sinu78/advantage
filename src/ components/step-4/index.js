@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import logo from '../../assets/images/advatage-logo.png';
 import './index.css';
 
-const Step_4 = ({submitForm}) => {
+const Step_4 = ({submitForm, isApiCallDone}) => {
     const [state, setState] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
         { "fullName": "", "dateOfBirth": "", "officialEmail": "", "email": "", "mobile": "", "spouseName": "", "moto": "", "referal": "", "office": "", "profession": "", "designation": "", "aboutDesignation": "", "residentialAddress": "", "jobDescription": "", "citizen": "", "qualification": "", "experience": "", "familyIncomeSource": "", "annualSalary": "", "inHandSalary": "", "maritalStatus": "", "savingOption": "", "dependent": "", "realEstate": "", "investments": "", "investments_value": "", "loans": "", "expenses": "", "insurance": "", "family": "", "home": "", "financial_assets": "", "fd": "", "mutualFund": "", "pms":"", "ppf":"", "directEquity":"",   "point1": "", "point2": "", "point3": "", "point4": "", "point5": "", "point6": "", "point7": "", "point8": "", "point9": "", "point10": "", "reasonExistingInvestments": "", "goalOfExistingInvestments": "", "existingInvestments": "", "riskProfile" : "", "investmentsRiskProfile": "", "investMore": "", "careOfNeed": "", "doctorSay": "" }
@@ -497,7 +497,7 @@ const Step_4 = ({submitForm}) => {
                                             </div>
                                         </div>
                                         <div className="form-div">
-                                            <a onClick={()=>handleSubmit()} id="submitFormBtn" className="btn-next" >Submit</a>
+                                            <input type="button" onClick={()=>handleSubmit()} id="submitFormBtn" className="btn-next" disabled={isApiCallDone} value={isApiCallDone ? '...Submitting' : 'Submit'} />
                                         </div>
 
                                     </div>

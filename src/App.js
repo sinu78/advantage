@@ -12,9 +12,11 @@ function App() {
   const [isStepThree, setStepThree] = useState(false)
   const [isStepFour, setStepFour] = useState(false)
   const [isStepFive, setStepFive] = useState(false)
+  const [isApiCallDone, setApiCallDone] = useState(false) 
   const headers = { "Content-Type": "multipart/form-data" }
   const handleHomePageSubmit = async (data) => {
     try {
+      setApiCallDone(true)
       const {name, email, mobile} = data
       const formData = new FormData();
       formData.append('name', name);
@@ -25,12 +27,22 @@ function App() {
       if(response?.data?.status === 200){
         setHome(false)
         setStepThree(true)
+        setApiCallDone(false)
         window.scrollTo(0, 0)
+      }
+      else if (response?.data?.status === 500) {
+        setTimeout(()=>{
+          setApiCallDone(false)
+          response.data.msg && showError(response.data.msg)
+        }, 1000)
       }
     }
     catch (error) {
-      error?.message && showError(error.message)
-      console.error(error)
+      setTimeout(()=>{
+        setApiCallDone(false)
+        error?.message && showError(error.message)
+      }, 500);
+      console.error(error);
     }
   }
 
@@ -42,6 +54,7 @@ function App() {
 
   const handleStep4Submit = async (data) => {
     try {
+      setApiCallDone(true)
       const formData = new FormData();
       for (let item in data) {
         formData.append([item], data[item])
@@ -51,11 +64,21 @@ function App() {
       if (response?.data?.status === 200) {
         setStepFour(false)
         setStepFive(true)
+        setApiCallDone(false)
         window.scrollTo(0, 0)
+      }
+      else if (response?.data?.status === 500) {
+        setTimeout(()=>{
+          setApiCallDone(false)
+          response.data.msg && showError(response.data.msg)
+        }, 1000)
       }
     }
     catch (error) {
-      error?.message && showError(error.message)
+      setTimeout(()=>{
+        setApiCallDone(false)
+        error?.message && showError(error.message)
+      }, 1000) 
       console.error(error)
     }
   }
@@ -85,9 +108,9 @@ function App() {
         draggable={false}
         pauseOnHover
       />
-      {isHomePage && <Home submitForm={handleHomePageSubmit}/>}
+      {isHomePage && <Home isApiCallDone={isApiCallDone} submitForm={handleHomePageSubmit}/>}
       {isStepThree && <StepThree handleClick={handleStep3CLick}/>}
-      {isStepFour && <StepFour submitForm={handleStep4Submit}/>}
+      {isStepFour && <StepFour isApiCallDone={isApiCallDone} submitForm={handleStep4Submit}/>}
       {isStepFive && <StepFive/>}
       
     </>

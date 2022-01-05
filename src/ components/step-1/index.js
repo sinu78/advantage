@@ -7,7 +7,7 @@ import benefir_3 from '../../assets/images/benefir-3.png';
 import benefir_4 from '../../assets/images/benefir-4.png';
 import './index.css';
 
-const Home = ({submitForm}) => {
+const Home = ({submitForm, isApiCallDone}) => {
     const [state, setState] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
         {
@@ -119,7 +119,7 @@ const Home = ({submitForm}) => {
                                             <input value={state.mobile} onChange={(e)=>handleChange(e)} type="text" className={`form-control form-input ${(!state.mobile && formSubmitted) ? 'error' : ''}`} name="mobile" placeholder="Mobile*"/>
                                         </div>
                                         <div className="form-group">
-                                            <input type="button" onClick={()=>handleSubmit()} className="btn btn-primary form-btn" value="Submit"/>
+                                            <input type="button" onClick={()=>handleSubmit()} className="btn btn-primary form-btn" disabled={isApiCallDone} value={isApiCallDone ? '...Submitting' : 'Submit'}/>
                                         </div>
                                         <div className="form-group">
                                             <label>By providing us with your information you are consenting to the collection and use of your information in accordance with our Terms of Service and Privacy Policy
