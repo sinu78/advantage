@@ -431,16 +431,16 @@ const Step_4 = ({submitForm, isApiCallDone}) => {
                                                     be Scope Of Work)</h3>
                                             </div>
                                             <div className="col-1">
-                                                <input value={state.point1} onChange={(e)=>handleChange(e)} type="text" id="point1" placeholder="Point 1." name="point1" />
-                                                <input value={state.point2} onChange={(e)=>handleChange(e)} type="text" id="point2" placeholder="Point 2." name="point2" />
-                                                <input value={state.point3} onChange={(e)=>handleChange(e)} type="text" id="point3" placeholder="Point 3." name="point3" />
-                                                <input value={state.point4} onChange={(e)=>handleChange(e)} type="text" id="point4" placeholder="Point 4." name="point4" />
-                                                <input value={state.point5} onChange={(e)=>handleChange(e)} type="text" id="point5" placeholder="Point 5." name="point5" />
-                                                <input value={state.point6} onChange={(e)=>handleChange(e)} type="text" id="point6" placeholder="Point 6." name="point6" />
-                                                <input value={state.point7} onChange={(e)=>handleChange(e)} type="text" id="point7" placeholder="Point 7." name="point7" />
-                                                <input value={state.point8} onChange={(e)=>handleChange(e)} type="text" id="point8" placeholder="Point 8." name="point8" />
-                                                <input value={state.point9} onChange={(e)=>handleChange(e)} type="text" id="point9" placeholder="Point 9." name="point9" />
-                                                <input value={state.point10} onChange={(e)=>handleChange(e)} type="text" id="point10" placeholder="Point 10." name="point10" />
+                                                <input value={state.point1} onChange={(e)=>handleChange(e)} type="text" id="point1" placeholder="1." name="point1" />
+                                                <input value={state.point2} onChange={(e)=>handleChange(e)} type="text" id="point2" placeholder="2." name="point2" />
+                                                <input value={state.point3} onChange={(e)=>handleChange(e)} type="text" id="point3" placeholder="3." name="point3" />
+                                                <input value={state.point4} onChange={(e)=>handleChange(e)} type="text" id="point4" placeholder="4." name="point4" />
+                                                <input value={state.point5} onChange={(e)=>handleChange(e)} type="text" id="point5" placeholder="5." name="point5" />
+                                                <input value={state.point6} onChange={(e)=>handleChange(e)} type="text" id="point6" placeholder="6." name="point6" />
+                                                <input value={state.point7} onChange={(e)=>handleChange(e)} type="text" id="point7" placeholder="7." name="point7" />
+                                                <input value={state.point8} onChange={(e)=>handleChange(e)} type="text" id="point8" placeholder="8." name="point8" />
+                                                <input value={state.point9} onChange={(e)=>handleChange(e)} type="text" id="point9" placeholder="9." name="point9" />
+                                                <input value={state.point10} onChange={(e)=>handleChange(e)} type="text" id="point10" placeholder="10." name="point10" />
                                             </div>
                                         </div>
 

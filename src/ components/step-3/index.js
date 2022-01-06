@@ -5,7 +5,7 @@ import './index.css';
 
 const Step_3 = ({ handleClick }) => {
     const [showButton, setShowButton] = useState(false)
-    const buttonShowTime = 1000 * 15
+    const buttonShowTime = 1000 * 0
 
     useEffect(() => {
         setTimeout(() => {

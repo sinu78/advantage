@@ -73,7 +73,7 @@ const Home = ({submitForm, isApiCallDone}) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
-                                <div className="about mobile-hidden">
+                                <div className="about">
                                     <h1>Attain financial security and abundance in foreseeable future<span>A 4-step roadmap for financial security and richness</span></h1>
                                     <div className="diveder">
                                         <div className="diveder-dots"></div>
@@ -86,8 +86,8 @@ const Home = ({submitForm, isApiCallDone}) => {
                         </div>
                         <div className="row">
                             <div className="col-md-6 col-12">
-                                <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"
-                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src="https://player.vimeo.com/video/651557010?autoplay=1" frameborder="1"  title="introVideo" 
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen/>
                             </div>
                             <div className="col-md-6 col-12">
                                 <div className="reserve-my-seat-form">
@@ -130,7 +130,7 @@ const Home = ({submitForm, isApiCallDone}) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
+                        {/* <div className="row">
                             <div className="col-12">
                                 <div className="about mobile-visible">
                                     <h1>Attain financial security and abundance in foreseeable future<span>A 4-step roadmap for financial security and richness</span></h1>
@@ -142,7 +142,7 @@ const Home = ({submitForm, isApiCallDone}) => {
                                     <h2>Rarely shared insights into financial planning <br/>Why people have financial problems? What sets them free?</h2>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
                 <section className="about-section">
@@ -245,7 +245,7 @@ const Home = ({submitForm, isApiCallDone}) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
-                                <div className="about">
+                                <div className="about video-intro">
                                     <h1>Don't proceed before watching the video.</h1>
                                     <div className="diveder">
                                         <div className="diveder-dots"></div>
